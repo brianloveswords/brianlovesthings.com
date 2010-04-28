@@ -14,6 +14,18 @@
     var self = this,
         vars = {};
     
+    function randomize(arr) {
+      // based on the Knuth shuffle algorithm
+      var max = arr.length,
+          randomIndex = function(n){Math.floor(Math.random()*n)}
+      for(var i = max; i > 1; i--){
+        var rnd = randomIndex(i),
+            tmp = arr[rnd];
+        arr[rnd] = arr[i-1];
+        arr[i-1] = arr[rnd];
+      }
+    }
+    
     function trim(str) {
       return str.replace(/^\s+|\s+$/g,"");
     }
@@ -25,7 +37,7 @@
       if (vars.thingList) {return vars.thingList}
       
       var things = self.attr('title').split(',');
-      vars.thingList = things;
+      vars.thingList = randomize(things);
       return things;
     }
     function getNextThing() {
