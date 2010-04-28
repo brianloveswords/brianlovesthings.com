@@ -1,13 +1,3 @@
-// find '.thing'
-// collect array of things from attr('title')
-// set position relative
-
-// spawn new .thing
-// set opacity 0, left +500px
-
-// animate old .thing: opacity:0, top:50
-// animate new .thing: opacity:1, left:0
-
 (function($){
   $.fn.rotateTitle = function() {
     //setup
@@ -17,13 +7,17 @@
     function randomize(arr) {
       // based on the Knuth shuffle algorithm
       var max = arr.length,
-          randomIndex = function(n){Math.floor(Math.random()*n)}
+          randomIndex = function(n){return Math.floor(Math.random()*n)}
+      
       for(var i = max; i > 1; i--){
         var rnd = randomIndex(i),
             tmp = arr[rnd];
+        
         arr[rnd] = arr[i-1];
-        arr[i-1] = arr[rnd];
+        arr[i-1] = tmp;
       }
+      console.dir(arr);
+      return arr;
     }
     
     function trim(str) {
