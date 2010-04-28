@@ -1,3 +1,5 @@
+require 'settings'
+
 require 'rubygems' 
 require 'sinatra' 
 get '/' do

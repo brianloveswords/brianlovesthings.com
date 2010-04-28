@@ -1,13 +1,13 @@
 ---
   environment: production
-  chdir: /srv/www/brianlovesthings.com/test
+  chdir: /srv/www/brianlovesthings.com/main
   address: 127.0.0.1
   user: root
   group: root
   port: 5000
-  pid: /srv/www/brianlovesthings.com/test/thin.pid
-  rackup: /srv/www/brianlovesthings.com/test/config.ru
-  log: /srv/www/brianlovesthings.com/test/thin.log
+  pid: /srv/www/brianlovesthings.com/main/thin.pid
+  rackup: /srv/www/brianlovesthings.com/main/config.ru
+  log: /srv/www/brianlovesthings.com/main/thin.log
   max_conns: 1024
   timeout: 30
   max_persistent_conns: 512

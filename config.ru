@@ -5,7 +5,7 @@ set :env, :production
 set :port, 5000
 disable :run, :reload
 
-require 'testapp'
+require 'main'
 
 run Sinatra::Application
 
