@@ -1,8 +1,9 @@
-//todo: make this font-independent.
+// by brian j brennan
+// if you can find a use for this, you are free to use it for whatever you want, no strings attached
 
 (function($){
   $.fn.rotateTitle = function() {
-    //setup
+
     var self = this,
         vars = {};
     
@@ -54,10 +55,10 @@
       var newThing = makeThingElement(),
           container = self.parent();
 
-      newThing.css({left:'8em', opacity:0});
+      newThing.css({left:(parseInt(vars.leftOffset)+270)+"px", opacity:0});
       container.append(newThing);
 
-      newThing.animate({opacity:1,left:'5.8em'}, 700);
+      newThing.animate({opacity:1,left:vars.leftOffset}, 700);
       return newThing;
     }
     function hideOldThing() {
@@ -77,13 +78,13 @@
     }
     
     function setup() {
+      vars.leftOffset = self.css('left')
       setCurrentIndex(0);
       cycle();
     }
     
     /* main */
     setup();
-    
     setInterval(function(){ cycle();  }, cycleTime());
   }
 })(jQuery)
