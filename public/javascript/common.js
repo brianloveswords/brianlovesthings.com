@@ -1,1 +1,2 @@
-console.dir('awesome!');
+
+$(document).ready(function(){$('.thing').rotateTitle();})
