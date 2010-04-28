@@ -72,14 +72,13 @@
     
     function setup() {
       setCurrentIndex(0);
-      
     }
     
     /* main */
     setup();
+    cycle();
     
     setInterval(function(){ cycle();  }, 5000);
-      
   }
 })(jQuery)
     
