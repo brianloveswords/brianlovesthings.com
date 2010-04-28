@@ -1,12 +1,28 @@
+=box-shadow(!hoz, !voz, !blur, !color)
+  -webkit-box-shadow = !hoz !voz !blur !color
+  -moz-box-shadow = !hoz !voz !blur !color
+  -box-shadow = !hoz !voz !blur !color
+
 body
   :font-family "Verdana"
+  :padding 0
+  :margin 0
 
 h1,h2,h3,h4,h5,h6
   :font-family "Baskerville"
 
+a
+  :border-bottom 1px solid #bab
+  :color black
+  :text-decoration none
+  :text-shadow 1px 1px 1px #bab
+
 #header
   :height 90px
   :border-bottom 1px solid #eee
+  :padding 5px 0
+  +box-shadow(0px, 10px, 40px, #eee)
+  
   h1
     :line-height 1em
     :padding 0 0 0 0
@@ -17,9 +33,10 @@ h1,h2,h3,h4,h5,h6
     :color #f80
     :position absolute
 
-.thing
-  :position absolute
-  :top 0px
-  :left 5.4em
+  .thing
+    :position absolute
+    :top 0px
+    :left 5.4em
   
-  
+#body
+  :padding 10px
