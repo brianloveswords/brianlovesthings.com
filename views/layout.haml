@@ -1,0 +1,15 @@
+!!! 5
+%html
+  %head
+    %title Brian Loves Things
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}
+    %meta{:description => 'Personal site of Brian J. Brennan (the american programmer. not the football player, or veteran, or canadian author, or latin american porn star).'}
+    %meta{:keywords => 'brian brennan,brian j brennan,brianloveswords,brianlovesdata,brianloveschips'}
+    %link{:rel => 'stylesheet', :href => '/css/main.css'}
+  %body
+    #header
+      %h1.title
+        Brian Loves
+        %span.things Things
+  
+    = yield

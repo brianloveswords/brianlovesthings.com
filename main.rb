@@ -1,15 +1,22 @@
 require 'settings'
-
 require 'rubygems' 
 require 'sinatra' 
+require 'haml'
+
 get '/' do
-  'I love all sorts of <a href="/chips">things</a>.'
+  haml :index
  end
 
 get '/chips' do
-  'And one of those <a href="/data">things</a> is <strong>chips</strong>.'
+  haml :chips
 end
  
 get '/data' do
-  'Another one of those things is <strong>data</strong>'
+  haml :data
 end
+
+get '/css/main.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :main
+end
+
