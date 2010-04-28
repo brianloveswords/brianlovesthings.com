@@ -16,7 +16,6 @@
         arr[rnd] = arr[i-1];
         arr[i-1] = tmp;
       }
-      console.dir(arr);
       return arr;
     }
     
