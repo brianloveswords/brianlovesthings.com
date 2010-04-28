@@ -1,3 +1,5 @@
+//todo: make this font-independent.
+
 (function($){
   $.fn.rotateTitle = function() {
     //setup
@@ -55,7 +57,7 @@
       newThing.css({left:'8em', opacity:0});
       container.append(newThing);
 
-      newThing.animate({opacity:1,left:'5.4em'}, 700);
+      newThing.animate({opacity:1,left:'5.8em'}, 700);
       return newThing;
     }
     function hideOldThing() {
