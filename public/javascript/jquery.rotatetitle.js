@@ -71,9 +71,7 @@
     /* main */
     setup();
     
-    setInterval(function(){
-      cycle();
-    }, 5000);
+    setInterval(function(){ cycle();  }, 5000);
       
   }
 })(jQuery)
