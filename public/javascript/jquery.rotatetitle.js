@@ -70,15 +70,21 @@
       self = newThing;
     }
     
+    function cycleTime() {
+      var min = 5000,
+          more = Math.floor(Math.random()*2000);
+      return min + more;
+    }
+    
     function setup() {
       setCurrentIndex(0);
+      cycle();
     }
     
     /* main */
     setup();
-    cycle();
     
-    setInterval(function(){ cycle();  }, 5000);
+    setInterval(function(){ cycle();  }, cycleTime());
   }
 })(jQuery)
     
