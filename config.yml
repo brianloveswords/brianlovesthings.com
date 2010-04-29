@@ -2,8 +2,8 @@
   environment: production
   chdir: /srv/www/brianlovesthings.com/main
   address: 127.0.0.1
-  user: root
-  group: root
+  user: www
+  group: www
   port: 5000
   pid: /srv/www/brianlovesthings.com/main/thin.pid
   rackup: /srv/www/brianlovesthings.com/main/config.ru
