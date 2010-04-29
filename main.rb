@@ -3,6 +3,10 @@ require 'rubygems'
 require 'sinatra' 
 require 'haml'
 
+#settings 
+set :haml, {:format => :html5}
+
+#ready set go
 get '/' do
   haml :index
  end
