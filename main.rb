@@ -1,5 +1,4 @@
-require 'settings'
-require 'rubygems' 
+require 'rubygems'
 require 'sinatra' 
 require 'haml'
 
