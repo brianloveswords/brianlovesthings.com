@@ -28,7 +28,13 @@ class MainTest < Test::Unit::TestCase
     assert last_response.ok?
     assert last_response.body.include?('iphone specific css')
   end
+
+  def test_include_rotation_script_on_homepage
+    get '/'
+    assert last_response.body.include?('activate rotating title')
+  end
 end
+
 
       
     
