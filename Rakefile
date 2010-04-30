@@ -22,6 +22,6 @@ namespace :server do
   desc "Restart Thin servers"
   task :restart => [:stop, :start] do
   end
+end
 
-end  
 
