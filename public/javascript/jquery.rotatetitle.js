@@ -15,7 +15,7 @@
       if (vars.thingList) {return vars.thingList}
       
       var things = self.attr('title').split(',');
-      vars.thingList = randomize(things);
+      vars.thingList = things.shuffle();
       return things;
     }
     function getNextThing() {
@@ -26,7 +26,7 @@
       
       setCurrentIndex(index);
       
-      return trim(thingList[index]);
+      return thingList[index].trim();
     }
     function makeThingElement(){
       var newThingElement = self.clone();
@@ -62,7 +62,6 @@
     function setup() {
       vars.leftOffset = self.css('left')
       setCurrentIndex(0);
-      cycle();
     }
     
     /* main */
