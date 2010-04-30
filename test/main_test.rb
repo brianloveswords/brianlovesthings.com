@@ -22,6 +22,12 @@ class MainTest < Test::Unit::TestCase
     assert last_response.ok?
     assert last_response.body.include?('css for the main layout')
   end
+  
+  def test_iphone_css_responds
+    get '/iphone.css'
+    assert last_response.ok?
+    assert last_response.body.include?('iphone specific css')
+  end
 end
 
       

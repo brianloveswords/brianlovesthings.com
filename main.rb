@@ -18,9 +18,14 @@ get '/data' do
   haml :data
 end
 
-
 # css 
 get '/main.css' do
   content_type 'text/css', :charset => 'utf-8'
   sass :main
 end
+
+get '/iphone.css' do
+  content_type 'text/css', :charset => 'utf-8'
+  sass :iphone
+end
+
