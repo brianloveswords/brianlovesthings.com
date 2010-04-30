@@ -4,11 +4,22 @@ require 'haml'
 
 #settings 
 set :haml, {:format => :html5}
+set :yar, 'har har'
+
+#helpers
+helpers do
+  def things 
+    ['Chips', 'Words', 'Data', 'Music', 'Cooking', 'Bikes', 'Typography', 'Comics', 'Beer', 'Cats', 'Chartreuse', 'Ampersands', 'Things'].shuffle
+  end
+end
+     
 
 #ready set go
 get '/' do
+  @rotatetitle = true
+  @things = things
   haml :index
- end
+end
 
 get '/chips' do
   haml :chips
