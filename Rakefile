@@ -1,5 +1,6 @@
 require 'rake/testtask'
 
+
 desc "Run basic tests"
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -24,4 +25,5 @@ namespace :server do
   end
 end
 
+task :default => [:test, "server:restart"]
 

@@ -18,7 +18,7 @@ class MainTest < Test::Unit::TestCase
   end
 
   def test_main_css_responds
-    get '/main'
+    get '/main.css'
     assert last_response.ok?
     assert last_response.body.include?('font-face')
   end
