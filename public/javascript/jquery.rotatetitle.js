@@ -7,24 +7,6 @@
     var self = this,
         vars = {};
     
-    function randomize(arr) {
-      // based on the Knuth shuffle algorithm
-      var max = arr.length,
-          randomIndex = function(n){return Math.floor(Math.random()*n)}
-      
-      for(var i = max; i > 1; i--){
-        var rnd = randomIndex(i),
-            tmp = arr[rnd];
-        
-        arr[rnd] = arr[i-1];
-        arr[i-1] = tmp;
-      }
-      return arr;
-    }
-    
-    function trim(str) {
-      return str.replace(/^\s+|\s+$/g,"");
-    }
     function setCurrentIndex(index) {
       vars.rtIndex = index;
       return true;

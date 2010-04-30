@@ -6,9 +6,8 @@
   <script src="http://code.jquery.com/jquery-1.4.2.js"></script>
   <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen" />
   <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
+  <script type="text/javascript" src="javascript/common.js"></script>
 
-  <script>
-  </script>
   
 </head>
 <body>
@@ -17,7 +16,8 @@
  <h2 id="qunit-banner"></h2>
  <h2 id="qunit-userAgent"></h2>
  <ol id="qunit-tests"></ol>
-  
-  <script type="text/javascript" src="http://view.jquery.com/trunk/jquery/test/unit/core.js"></script>
+
+<script type="text/javascript" src="javascript/tests/common.js"></script>
+
 </body>
 </html>
