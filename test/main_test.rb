@@ -15,9 +15,14 @@ class MainTest < Test::Unit::TestCase
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('brian brennan')
-    assert false == true
   end
 
+  def test_main_css_responds
+    get '/main'
+    assert last_response.ok?
+    assert last_response.body.include?('font-face')
+  end
+  
 end
 
       

@@ -20,8 +20,7 @@ end
 
 
 # css 
-get '/css/main.css' do
+get '/main.css' do
   content_type 'text/css', :charset => 'utf-8'
   sass :main
 end
-
