@@ -11,10 +11,11 @@ class MainTest < Test::Unit::TestCase
     Sinatra::Application
   end
 
-  def test_basic_response
+  def test_respond_with_homepage
     get '/'
     assert last_response.ok?
     assert last_response.body.include?('brian brennan')
+    assert false == true
   end
 
 end
