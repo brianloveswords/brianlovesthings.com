@@ -4,12 +4,14 @@ require 'haml'
 
 #settings 
 set :haml, {:format => :html5}
-set :yar, 'har har'
 
 #helpers
 helpers do
   def things 
-    ['Chips', 'Words', 'Data', 'Music', 'Cooking', 'Bikes', 'Typography', 'Comics', 'Beer', 'Cats', 'Chartreuse', 'Ampersands', 'Things'].shuffle
+    ['Chips', 'Words', 'Data', 'Music',
+     'Cooking', 'Bikes', 'Typography',
+     'Comics', 'Beer', 'Cats',
+     'Chartreuse', 'Ampersands', 'Things'].shuffle
   end
   
   # Regexes to match identifying portions of UA strings from iPhone and Android
