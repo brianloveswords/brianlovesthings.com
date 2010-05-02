@@ -16,8 +16,9 @@ namespace :server do
 
   desc "Stop Thin servers"
   task :stop do
-    sh "kill `cat thin.5000.pid`"
-    sh "kill `cat thin.5001.pid`"
+    Dir.glob('thin*pid').each do |server_pid_file|
+      sh "kill `cat #{server_pid_file}`"
+    end
   end
 
   desc "Restart Thin servers"
