@@ -6,18 +6,25 @@
   <script src="http://code.jquery.com/jquery-1.4.2.js"></script>
   <link rel="stylesheet" href="http://github.com/jquery/qunit/raw/master/qunit/qunit.css" type="text/css" media="screen" />
   <script type="text/javascript" src="http://github.com/jquery/qunit/raw/master/qunit/qunit.js"></script>
+  
   <script type="text/javascript" src="javascript/common.js"></script>
+  <script type="text/javascript" src="javascript/jquery.mininote.js"></script>
 
   
 </head>
 <body>
   
- <h1 id="qunit-header">QUnit example</h1>
- <h2 id="qunit-banner"></h2>
- <h2 id="qunit-userAgent"></h2>
- <ol id="qunit-tests"></ol>
+  <h1 id="qunit-header">QUnit example</h1>
+  <h2 id="qunit-banner"></h2>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
 
-<script type="text/javascript" src="javascript/tests/common.js"></script>
-
+  <div id="mininote-test" style="position: absolute; top: -1000px; left: -1000px;">
+    <span title="this is great!">awesome</span>
+    <span title="bears are scary">Learn more about bears</span>
+  </div>
+  
+  <script type="text/javascript" src="javascript/tests/common.js"></script>
+  <script type="text/javascript" src="javascript/tests/jquery.mininote.js"></script>
 </body>
 </html>
