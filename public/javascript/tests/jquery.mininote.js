@@ -29,13 +29,43 @@ test("note grabbing", function() {
 });
 
 test('note element creation', function() {
-  expect(3);
+  expect(4);
   equals( $('#mininote-container').length, 1, 'mininotes container created');
   
   var notes = $('#mininote-container > div');
   equals( notes.length, 2, 'mininotes container populated');
   equals( notes.eq(1).html(), 'bears are scary' );
+  equals( $(mininote.elements[1].mininote_element).html(), 'bears are scary');
+});
+
+test('element event attachment', function() {
+  expect(6);
+  
+  var note_element = mininote.notes[0].note,
+      trigger_element = mininote.notes[0].element;
+  trigger_element.trigger('mouseover');
+  equals( note_element.hasClass('active'), true );
+
+  trigger_element.trigger('mouseout');
+  equals( note_element.hasClass('active'), false );
+
+  var mousemove_event = jQuery.Event('mousemove');
+  
+  mousemove_event.pageX = 500;
+  mousemove_event.pageY = 500;
+  
+  trigger_element.trigger(mousemove_event);
+  equals( note_element.css('top'), '515px' );
+  equals( note_element.css('left'), '515px' );
+
+  mousemove_event.pageX = 539;
+  mousemove_event.pageY = 210;
+
+  trigger_element.trigger(mousemove_event);
+  equals( note_element.css('top'), 210 + 15 + 'px' );
+  equals( note_element.css('left'), 539 + 15 + 'px' );
 
 });
+
 
 })
