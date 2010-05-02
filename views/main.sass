@@ -3,7 +3,13 @@
 =box-shadow(!hoz, !voz, !blur, !color)
   -webkit-box-shadow = !hoz !voz !blur !color
   -moz-box-shadow = !hoz !voz !blur !color
-  -box-shadow = !hoz !voz !blur !color
+  box-shadow = !hoz !voz !blur !color
+
+
+=border-radius(!radius)
+  -webkit-border-radius = !radius
+  -moz-border-radius = !radius
+  border-radius = !radius
 
 body
   :font-family "Baskerville"
@@ -64,3 +70,18 @@ a
       :font-size 0.6em
       :position relative
       :top -0.25em
+
+
+.mininote
+  :background #f80
+  +border-radius(10px)
+  :display none
+  :padding 10px
+  :position absolute
+  :color white
+  :font-size 0.8em
+  :max-width 220px
+
+.mininote.active
+  :display block
+  

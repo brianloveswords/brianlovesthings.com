@@ -66,3 +66,10 @@
   , one&#8211;half irish
 %p I originally ended all these statements with periods, but then I took them all out
 %p I don't know why
+
+%script{:type=>'text/javascript', :src=>'javascript/jquery.mininote.js'}
+:javascript
+  $(document).ready(function(){
+    $('span.note').mininote();
+  });
+    
