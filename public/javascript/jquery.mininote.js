@@ -44,7 +44,6 @@
         mininote_container.append( note_element );
         
         this.mininote_element = note_element;
-        console.dir(this);
       });
 
       $('body').append( mininote_container );
@@ -58,8 +57,6 @@
         this.mininote_element.removeClass('active');
       });
       this.elements.bind('mousemove', function(event){
-        console.dir(event);
-        
         this.mininote_element.css({
           top: (event.pageY + 15) + "px",
           left: (event.pageX + 15) + "px"
