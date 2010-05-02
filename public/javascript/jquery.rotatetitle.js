@@ -1,7 +1,9 @@
-// by brian j brennan
-// if you can find a use for this, you are free to use it for whatever you want, no strings attached
+/*
+ * Copyright (c) 2010 Brian J Brennan
+ * Licensed under the MIT license
+ */
 
-(function($){
+(function( $ ){
   $.fn.rotateTitle = function() {
 
     var self = this,
