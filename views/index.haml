@@ -8,9 +8,9 @@
 %p I live in New York City
 %p
   I currently work as a
-  %span.note{:title=>"but my boss calls me a 'systems developer'"}
+  %span.note
     Level 4 Frontend Wizard
-    %span.more ( ? )
+    %span.more{:title=>"but my boss calls me a &#8216;systems developer&#8217;"} ( ? )
   for
   %a{:href=>"http://flatworldknowledge.com"} Flat World Knowledge
 %p
@@ -40,9 +40,9 @@
 %p I have a love/hate relationship with symmetry
 %p
   I dream of the day when
-  %span.note{:title=>"Internet Explorer; see also: A non-modern browser; The bane of my existence."}
+  %span.note
     IE
-    %span.more ( ? )
+    %span.more{:title=>"Internet Explorer; see also: A non-modern browser; The bane of my existence."} ( ? )
   supports modern standards
 %p I also dream of the day when fonts on Windows look good
 %p
@@ -60,9 +60,9 @@
 %p
   I am exactly
   one&#8211;half
-  %span.note{:title=>'you know, like the canal.'}
+  %span.note
     panamanian
-    %span.more ( ? )
+    %span.more{:title=>'you know, like the canal.'} ( ? )
   , one&#8211;half irish
 %p I originally ended all these statements with periods, but then I took them all out
 %p I don't know why
@@ -70,6 +70,6 @@
 %script{:type=>'text/javascript', :src=>'javascript/jquery.mininote.js'}
 :javascript
   $(document).ready(function(){
-    $('span.note').mininote();
+    $('span.note .more').mininote();
   });
     
