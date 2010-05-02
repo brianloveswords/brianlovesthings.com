@@ -2,3 +2,5 @@
 *log
 *pid
 *#*#
+config.ru
+config.yml
