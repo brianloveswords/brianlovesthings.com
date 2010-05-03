@@ -1,0 +1,20 @@
+%h2 Create a new blog post
+
+%form#new_post{:method=>'post', :action=>'/words/create' }
+  
+  %label{ :for => "post_title" } Title: 
+  %input#post_title{ :name => 'title',:type => 'text' }
+  
+  %label{ :for => "post_body" } Body: 
+  %textarea#post_body{ :name => 'body'}
+  
+  %label{ :for => "tweet" } Tweet:
+  %input#tweet{ :name => 'tweet', :type => 'text', }
+  
+  %label{ :for => "permauri" } Permauri: 
+  %input#permauri{ :name => 'permauri', :type => 'text',}
+  
+  %label{ :for => "tags" } Tags: 
+  %input#tags{ :name => 'tags',  :type => 'text', }
+  
+  %input#submit{:type=>'submit', :value=>'do it'}

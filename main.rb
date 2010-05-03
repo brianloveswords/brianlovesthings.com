@@ -4,7 +4,7 @@ require 'haml'
 require 'mongo'
 
 #settings 
-set :haml, {:format => :html5}
+set :haml, {:format => :html5, }
 
 #helpers
 helpers do
@@ -26,6 +26,10 @@ helpers do
   # Compares User Agent string against regexes of designated mobile devices
   def mobile_request? 
     mobile_user_agent_patterns.any? {|r| request.env['HTTP_USER_AGENT'] =~ r}
+  end
+
+  def collect_test_posts
+    @db.collection( "test" ).find().sort([:date, :descending])
   end
 
 end
@@ -65,9 +69,33 @@ get '/' do
 end
 
 get '/words' do
-  @posts = @db.collection "test"
+  @posts = collect_test_posts()
   @things = ['words']
   haml :words
+end
+
+get '/words/create' do
+  @things = ['blagging']
+  haml :words_create
+end
+
+post '/words/create' do
+  begin 
+    @things = ['success']
+    entry = {
+      :date     => Time.now.to_i             ,
+      :title    => params[:title]            ,
+      :body     => params[:body]             ,
+      :tweet    => params[:tweet]            ,
+      :permauri => params[:permauri]         ,
+      :tags     => params[:tags].split(/\s+/),
+    }
+    @db.collection( "test" ).insert( entry )
+    haml "%h2 Post successful!"
+  rescue
+    @things = ['errors']
+    haml "%h2.error Something went horribly wrong."
+  end
 end
 
 # css 

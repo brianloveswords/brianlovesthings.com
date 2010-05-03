@@ -1,4 +1,4 @@
-- @posts.find().each do |post|
+- @posts.each do |post|
   - date = Time.at( post['date'] )
   
   .entry
@@ -8,7 +8,8 @@
         #{post['body']}
     .ul.tags
       - post['tags'].each do |tag|
-        %li.tag= tag
+        %li.tag
+          %a{ :href => "/words/tags/#{tag}" }= tag
 
     .date
       %span.month= date.strftime( "%B" )
