@@ -27,18 +27,19 @@ helpers do
   def mobile_request? 
     mobile_user_agent_patterns.any? {|r| request.env['HTTP_USER_AGENT'] =~ r}
   end
-  
+
 end
      
 #preprocessing
 before do
   begin
-    @db = Mongo::Connection.new.db('app')
+    @db = Mongo::Connection.new.db('brianlovesthings')
   rescue
     @db = nil
   end
   
   @things = things
+  @rotatetitle = false
   
   if mobile_request?
     @iphone_greeting = 'mobile'
@@ -64,8 +65,9 @@ get '/' do
 end
 
 get '/words' do
-  @posts = @db.collection "posts"
-  "hello"
+  @posts = @db.collection "test"
+  @things = ['words']
+  haml :words
 end
 
 # css 

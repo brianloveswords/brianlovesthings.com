@@ -1,0 +1,19 @@
+- @posts.find().each do |post|
+  - date = Time.at( post['date'] )
+  
+  .entry
+    %h2.title= post['title']
+    .body
+      :markdown
+        #{post['body']}
+    .ul.tags
+      - post['tags'].each do |tag|
+        %li.tag= tag
+
+    .date
+      %span.month= date.strftime( "%B" )
+      %span.day= date.strftime( "%d" ).gsub( /^0/, '' )
+      %span.year= date.strftime( "%Y" )
+
+
+   
