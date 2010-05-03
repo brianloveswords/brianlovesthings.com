@@ -61,6 +61,9 @@ get '/debug/db_connection' do
   end
 end
 
+get '/debug/environment' do
+end
+
 
 #ready set go
 get '/' do
@@ -68,7 +71,7 @@ get '/' do
   haml :index
 end
 
-get '/words' do
+get %r{^/words(/)?$} do
   @posts = collect_test_posts()
   @things = ['words']
   haml :words
