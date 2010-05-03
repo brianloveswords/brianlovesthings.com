@@ -33,6 +33,12 @@ class MainTest < Test::Unit::TestCase
     get '/'
     assert last_response.body.include?('activate rotating title')
   end
+
+  def test_db_connection
+    get '/debug/db_connection'
+    assert last_response.ok?
+    assert last_response.body.include?('db ok')
+  end
 end
 
 

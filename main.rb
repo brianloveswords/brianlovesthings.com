@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra' 
 require 'haml'
+require 'mongo'
 
 #settings 
 set :haml, {:format => :html5}
@@ -31,6 +32,12 @@ end
      
 #preprocessing
 before do
+  begin
+    @db = Mongo::Connection.new.db('app')
+  rescue
+    @db = nil
+  end
+  
   @things = things
   
   if mobile_request?
@@ -39,18 +46,26 @@ before do
   end
 end
 
+
+# debug routes
+get '/debug/db_connection' do
+  if @db.class == Mongo::DB
+    'db ok'
+  else
+    'db busted'
+  end
+end
+
+
 #ready set go
 get '/' do
   @rotatetitle = true
   haml :index
 end
 
-get '/chips' do
-  haml :chips
-end
- 
-get '/data' do
-  haml :data
+get '/words' do
+  @posts = @db.collection "posts"
+  "hello"
 end
 
 # css 
