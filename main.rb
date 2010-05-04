@@ -28,8 +28,8 @@ helpers do
     mobile_user_agent_patterns.any? {|r| request.env['HTTP_USER_AGENT'] =~ r}
   end
 
-  def collect_test_posts
-    @db.collection( "test" ).find().sort([:date, :descending])
+  def collect_test_posts(filter=nil)
+    @db.collection( "test" ).find(filter).sort([:date, :descending])
   end
 
 end
@@ -72,12 +72,23 @@ get '/' do
 end
 
 get %r{^/words(/)?$} do
-  @posts = collect_test_posts()
+  @pagetype = 'words'
   @things = ['words']
+  
+  @posts = collect_test_posts()
+  haml :words
+end
+
+get '/words/tags/:tags' do
+  @pagetype = 'words'
+  @things = ['tags']
+  
+  @posts = collect_test_posts( { :tags=>params[:tags] } )
   haml :words
 end
 
 get '/words/create' do
+  @pagetype = 'words'
   @things = ['blagging']
   haml :words_create
 end

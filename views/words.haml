@@ -3,6 +3,11 @@
   
   .entry
     %h2.title= post['title']
+    .date
+      %span.month= date.strftime( "%B" )
+      %span.day= date.strftime( "%d" ).gsub( /^0/, '' )
+      %span.year= date.strftime( "%Y" )
+
     .body
       :markdown
         #{post['body']}
@@ -10,11 +15,6 @@
       - post['tags'].each do |tag|
         %li.tag
           %a{ :href => "/words/tags/#{tag}" }= tag
-
-    .date
-      %span.month= date.strftime( "%B" )
-      %span.day= date.strftime( "%d" ).gsub( /^0/, '' )
-      %span.year= date.strftime( "%Y" )
 
 
    
