@@ -2,5 +2,6 @@
 *log
 *pid
 *#*#
+*.sass-cache*
 config.ru
 config.yml
